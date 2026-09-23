@@ -1,3 +1,3 @@
-# Digital Volleyball Scoresheet v14
+# Volleyball Scoresheet v15
 
-Adds in-first substitution flow, automatic primary captain restoration, timeout/sub trackers, switch-sides control, set score confirmation/signoff with undo, button-based lineup entry, alternating first-serve defaults through set 4, set/match timing, clickable alternate captain selection, editable log descriptions, replay, and team color accents. Sanctions remain intentionally deferred.
+Fixes action cancellation, visible editable match-log controls, team-color scoring buttons, lineup libero-selection feedback, side switching, captain tracking through libero exchanges, and prominent timeout/substitution used/remaining trackers.
