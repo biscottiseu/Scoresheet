@@ -1,3 +1,5 @@
-# Digital Volleyball Scoresheet v4
+# Digital Volleyball Scoresheet v5
 
-Fixes a storage/undo bug that could freeze scoring after a few rallies. Event undo snapshots now store only match state rather than recursively embedding the full event history. Uses a new local-storage key so the broken v3 state does not carry into this version.
+Adds pregame match setup, configurable match rules, and corrected clockwise rotation logic so the receiving team’s Position II player rotates to Position I on its first sideout before server verification.
+
+Deploy the contents of this folder to the existing Vercel/GitHub project.
