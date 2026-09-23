@@ -1,3 +1,7 @@
-Volleyball Digital Scoresheet v6
+# Volleyball Scoresheet v7
 
-Changes: fixed numeric match-option dropdowns; removed score cap; both teams enter true starting positions I–VI; normal side-out rotation applies when a receiving team gains serve; Position I is the initial server position for the team serving first.
+Changes from v6:
+- A team that begins a set receiving does not rotate the first time it gains serve.
+- The player entered in Position I is therefore that team’s first server.
+- After a team has completed its first service turn, later side-outs rotate normally before server verification.
+- Uses a new local-storage key so older test state does not interfere.
