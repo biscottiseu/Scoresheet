@@ -1,3 +1,3 @@
-Volleyball Scoresheet v18
+# Volleyball Scoresheet v19
 
-Fixes Scoresheet View opening/rendering. Also reads lineup rotation data from the current rot field and uses setup team colors in the paper-style scoresheet.
+Fixes the paper scoresheet renderer crash caused by the renderer reading `s.score.A` instead of the app's actual `s.scores.A` state. Also aligns completed-set score/timing lookup with `setRecords`, fixes libero lookup from saved lineup data, and tags centrally logged future events with their set number for more reliable set-by-set rendering.
