@@ -1,3 +1,3 @@
-Volleyball Scoresheet v16
+Volleyball Scoresheet v17
 
-Adds clickable roster setup, structured event correction, captain/libero correction, and printable live scoresheet view.
+Adds an official paper-style, set-by-set scoresheet view generated from live match data, with in-match viewing and print-all-sets support.
