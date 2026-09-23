@@ -1,5 +1,3 @@
-# Digital Volleyball Scoresheet v5
+Volleyball Digital Scoresheet v6
 
-Adds pregame match setup, configurable match rules, and corrected clockwise rotation logic so the receiving team’s Position II player rotates to Position I on its first sideout before server verification.
-
-Deploy the contents of this folder to the existing Vercel/GitHub project.
+Changes: fixed numeric match-option dropdowns; removed score cap; both teams enter true starting positions I–VI; normal side-out rotation applies when a receiving team gains serve; Position I is the initial server position for the team serving first.
