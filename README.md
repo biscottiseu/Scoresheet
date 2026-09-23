@@ -1,7 +1,5 @@
-# Volleyball Scoresheet v7
+# Digital Volleyball Scoresheet v8
 
-Changes from v6:
-- A team that begins a set receiving does not rotate the first time it gains serve.
-- The player entered in Position I is therefore that team’s first server.
-- After a team has completed its first service turn, later side-outs rotate normally before server verification.
-- Uses a new local-storage key so older test state does not interfere.
+Static Vercel-ready prototype. Upload `index.html` and this README to the GitHub repository connected to Vercel.
+
+v8 adds roster entry, lineup captain designation, double server verification on every rally, interactive libero replacement tracking, rotation-slot substitution eligibility, captain replacement prompts, and structured timeout entry. Sanctions are intentionally deferred.
