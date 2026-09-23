@@ -1,3 +1,3 @@
-# Volleyball Scoresheet v11
+# Volleyball Scoresheet v12
 
-Fixes the pre-serve action controls. Substitution and Timeout modals are now present and open correctly while waiting for server verification. These controls remain locked after the serve is verified until a point is recorded.
+Fixes libero replacement handling after rotation. A libero may rotate into a front-row display position after a sideout, but the regular player tied to that replacement sequence can now return from the REPLACED box even though the current court position is front row. The app warns that the libero must leave before the next serve. A new libero still cannot enter for a front-row player.
