@@ -1,3 +1,3 @@
-# Volleyball Scoresheet v15
+Volleyball Scoresheet v16
 
-Fixes action cancellation, visible editable match-log controls, team-color scoring buttons, lineup libero-selection feedback, side switching, captain tracking through libero exchanges, and prominent timeout/substitution used/remaining trackers.
+Adds clickable roster setup, structured event correction, captain/libero correction, and printable live scoresheet view.
