@@ -1,3 +1,3 @@
-Volleyball Scoresheet v17
+Volleyball Scoresheet v18
 
-Adds an official paper-style, set-by-set scoresheet view generated from live match data, with in-match viewing and print-all-sets support.
+Fixes Scoresheet View opening/rendering. Also reads lineup rotation data from the current rot field and uses setup team colors in the paper-style scoresheet.
