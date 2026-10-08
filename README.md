@@ -8,13 +8,21 @@ Live volleyball scoring that prints a hand-completed-looking NCAA scoresheet. It
 - **Main screen:** score, sets won, timeouts, substitutions and challenges for each team. The court shows each position with the net at the top. A substituted player shows who they came in for ("for #14"), and the libero shows "L1 for #18".
 - **Substitution:** one row per service position. Each row shows who is on the court and everyone who has played that position this set (earlier players struck through). It then lists the bench players who can come in for that player. Players who already played the position are marked *returns*. One tap records the sub, and the confirmation has an Undo link.
 - **After each set:** confirming the score opens that set's finished scoresheet, with buttons to print it or the libero tracking sheet, then continues to the next set's lineups.
-- **Match setup:** four tabs: Match, Teams & rosters, Officials, Rules. Rosters can be typed ("1 3 5 7 12") or picked from the full number list. If anything is missing, the form jumps to the tab that needs it.
+- **Match setup:** four tabs in order: Match info, Rules, Officials, Teams & rosters. Continue on the last tab saves and moves to the coin toss.
+- **Coin toss:** a box for each team to record who won the toss, who serves first and which side each team is on (as seen from the scorer's table). This comes before lineups, matching the pre-match routine, and appears again before a deciding set. The result fills in the first server and puts the teams on the matching sides of the screen. Rosters can be typed ("1 3 5 7 12") or picked from the full number list. If anything is missing, the form jumps to the tab that needs it.
 
 ## How it works
 A match is stored as a **log of actions**: lineup, serve, rally, sub, libero, timeout, sanction, captain, note and set confirmation. Every action goes through one rules engine. The live screen, the match log and the printed sheet are all rebuilt from that log. Because of this:
 - **Undo** is exact.
 - **Edit** can safely correct an old entry. The whole match is re-checked, and if a later entry would stop being legal, the correction is refused with the reason.
 - The scoresheet always matches what was scored.
+
+## High school (NFHS) rules
+- 18 substitutions per set with unlimited entries. A player returns only to their original serving position, and a player taken out can't come back in the same dead ball (rule 10-3-3).
+- Up to two liberos per set, one on court at a time (2026-27 change).
+- Best of five with the fifth set to 15, or best of three with every set to 25.
+- Two timeouts per set; no technical timeouts or challenge review.
+- Teams change courts between sets; a coin toss before the deciding set decides courts (home captain calls). The visiting captain calls the pre-match toss.
 
 ## Rules enforced
 - Lineups: six different starters from the roster, captain chosen from the starters, liberos not in the starting six.
@@ -45,7 +53,8 @@ The **Division** chosen in Match Setup picks the form automatically:
 | NCAA Division I | 2026-27 NCAA Division I scoresheet | count boxes 1–15 (default limit 15) |
 | NCAA Division II / III | 2026-27 NCAA Division II/III scoresheet | count boxes 1–18 (default limit 18) |
 | NAIA Women's / Men's | NAIA scoresheet | unlimited, no count on the form |
-| NJCAA, NCCAA, High School, Club, Other | NCAA Division II/III scoresheet | count boxes 1–18 |
+| High School (NFHS) | temporary logo-free high school form (same layout) until the official NFHS sheet is added | count boxes 1–18 |
+| NJCAA, NCCAA, Club, Other | NCAA Division II/III scoresheet | count boxes 1–18 |
 
 All forms have a running score to 36. When the libero serves, a triangle is drawn over that rotation's Roman numeral in the Serving Order column, and the libero's serves are triangles on the service line and in the running score.
 
