@@ -1,6 +1,11 @@
 # Volleyball Scoresheet v22
 
-Live volleyball scoring that prints a hand-completed-looking NCAA scoresheet. It's a static site with two files (`index.html` and `scoresheet-bg.png`), no build step, and it works offline.
+Live volleyball scoring that prints a hand-completed-looking NCAA scoresheet. It's a single file (`index.html`) with both scoresheet forms built in, no build step, and it works offline.
+
+## Screens
+- **Main screen:** score, sets won, timeouts, substitutions and challenges for each team. The court shows each position with the net at the top. A substituted player shows who they came in for ("for #14"), and the libero shows "L1 for #18".
+- **Substitution:** one row per service position. Each row shows who is on the court and everyone who has played that position this set (earlier players struck through). It then lists the bench players who can come in for that player. Players who already played the position are marked *returns*. One tap records the sub, and the confirmation has an Undo link.
+- **Match setup:** four tabs: Match, Teams & rosters, Officials, Rules. Rosters can be typed ("1 3 5 7 12") or picked from the full number list. If anything is missing, the form jumps to the tab that needs it.
 
 ## How it works
 A match is stored as a **log of actions**: lineup, serve, rally, sub, libero, timeout, sanction, captain, note and set confirmation. Every action goes through one rules engine. The live screen, the match log and the printed sheet are all rebuilt from that log. Because of this:
@@ -23,10 +28,39 @@ A match is stored as a **log of actions**: lineup, serve, rally, sub, libero, ti
 - Floor captain is requested when the game captain leaves the court.
 - Timeouts per set, plus media timeouts.
 - Sanctions: improper request, yellow card, red card. A red card gives the point and the serve to the opponent.
-- Sets to 25 (deciding set to 15), win by 2. Prompts to switch sides at 8 in the deciding set.
+- Sets to 25 (deciding set to 15), win by 2. Prompts the side change after set 2 (2026 NCAA rule 9.2.4; no switch at 8 in set 5).
+- Exceptional substitution (injury/illness): doesn't count toward the limit, and the player removed can't return that set.
+- Technical timeout (sets 1–4) and media timeout, written in Comments.
+- Challenge review (CRS, optional in Match Info): 2 per team per match. A reversed challenge is kept, and a fifth set adds one (max 2). After a reversal the app offers to correct the last rally.
 
 ## Scoresheet
-One Letter-landscape page per set. Use **Print this set** or **Print all sets**, then choose "Save as PDF" for a digital copy.
+The **Division** chosen in Match Setup picks the form automatically:
+
+| Division | Form | Substitutions |
+|---|---|---|
+| NCAA Division I | 2026-27 NCAA Division I scoresheet | count boxes 1–15 (default limit 15) |
+| NCAA Division II / III | 2026-27 NCAA Division II/III scoresheet | count boxes 1–18 (default limit 18) |
+| NAIA Women's / Men's | NAIA scoresheet | unlimited, no count on the form |
+| NJCAA, NCCAA, High School, Club, Other | NCAA Division II/III scoresheet | count boxes 1–18 |
+
+All forms have a running score to 36. When the libero serves, a triangle is drawn over that rotation's Roman numeral in the Serving Order column, and the libero's serves are triangles on the service line and in the running score.
+
+Substitutions are written the paper way: in the Players' Numbers box, the player leaving is slashed and the incoming number is written next to it, left to right, for every sub in that position. The service line also gets S in/out (Sx when the team is receiving), and the Substitutions count is slashed.
+
+Scoresheet notation follows the 2026 NCAA scoring procedures. The captain is written "2c". A replay is a "P" in the service circle. Subs requested together are written as one entry ("Sx7/4, 3/6"). A player removed by exceptional substitution is circled instead of slashed. Challenges are written in Comments.
+
+## Libero tracking sheet
+The Scoresheet viewer has a **Libero tracking** tab, which prints portrait. It uses the NCAA D-I, NCAA D-II/III or NAIA form, matching the division. One sheet covers the whole match:
+- S circled for the team serving first; team name; L1 and L2 (x when there's none).
+- Service column: one tally each time that position starts a term of service.
+- SP: starting player (c = captain).
+- Substitution: the leaving number is slashed and the entering number written to its right (circled for an exceptional sub).
+- Libero replacement: "L" after the replaced number, which isn't slashed. When that player returns, the number is written again after the L. Exchanges between liberos aren't recorded.
+- A triangle around the Roman numeral where the libero served.
+- Team substitution count slashed (D-I 15, D-II/III 18; none on NAIA).
+- Challenge tables: set, score (challenging team first), and outcome circled.
+
+One Letter-landscape page per set for the scoresheet. Use **Print this set** or **Print all sets**, then choose "Save as PDF" for a digital copy.
 
 ## Data
 - The match saves automatically on the device.
