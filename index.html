@@ -162,7 +162,15 @@ label.check input{margin-top:3px;width:16px;height:16px;accent-color:var(--pen)}
 .bigscore{font-size:64px;font-weight:700;text-align:center;font-variant-numeric:tabular-nums}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.stats>div{border:1px solid var(--rule);border-radius:var(--r);padding:10px;text-align:center}
 /* substitution table */
-.subtable{width:100%;border-collapse:collapse;margin-top:6px}
+.teamSwitch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 6px}
+.ts{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);text-align:left;font-size:18px;font-weight:700;min-width:0}
+.ts .tsdot{width:12px;height:12px;border-radius:50%;background:var(--team);flex:none}
+.ts .tsname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ts .tsused{margin-left:auto;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap}
+.ts.on{background:var(--team);border-color:var(--team);color:#fff}.ts.on .tsdot{background:#fff}.ts.on .tsused{color:rgba(255,255,255,.85)}
+.ts:not(.on):hover{border-color:var(--ink2)}
+.subwho{margin:10px 0 4px;padding-left:10px;border-left:4px solid var(--team);font-size:16px}
+.subtable{border-left:4px solid var(--team);width:100%;border-collapse:collapse;margin-top:6px}
 .subtable th{font-size:13px;font-weight:600;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule2)}
 .subtable td{padding:8px;border-bottom:1px solid #eef1f5;vertical-align:middle}
 .subtable .pl{font-weight:700;width:44px;color:var(--ink2)}
@@ -176,6 +184,32 @@ label.check input{margin-top:3px;width:16px;height:16px;accent-color:var(--pen)}
 .toast.show{opacity:1}.toast.error{background:#8b1c1c}
 .sheetTabs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 36px 12px 0}
 .sheetLegend{margin-top:10px;font-size:14px;color:var(--muted);max-width:90ch}
+
+/* ---- Home & library ---- */
+button.brand{border:0;background:none;padding:0;cursor:pointer}
+.homeView{max-width:980px;margin:0 auto}
+.home-hero{padding:28px 0 18px}
+.home-hero h1{margin:0;font-size:40px;font-weight:700;line-height:1.05}
+.home-hero p{margin:8px 0 0;color:var(--ink2);font-size:18px;max-width:60ch}
+.home-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 26px}
+.homeBtn{display:block;text-align:left;padding:20px 22px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface)}
+.homeBtn b{display:block;font-size:24px;font-weight:700}
+.homeBtn span{display:block;color:var(--muted);font-size:16px;margin-top:2px}
+.homeBtn:hover{border-color:var(--ink2)}
+.homeBtn.primary{background:var(--pen);border-color:var(--pen);color:#fff}.homeBtn.primary span{color:rgba(255,255,255,.82)}
+.homeBtn.primary:hover{background:#18337a}
+.home-list h2{font-size:20px;margin:0}
+.lib-h{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.lib-h h2{margin-right:auto}.lib-h .field{width:280px;margin:0}
+.libtable{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--rule);border-radius:6px;margin-top:8px}
+.libtable th{font-size:13px;font-weight:600;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule2)}
+.libtable td{padding:10px 12px;border-bottom:1px solid #eef1f5;vertical-align:middle}
+.libtable .hd{white-space:nowrap;color:var(--ink2);width:110px}
+.libtable .sub{display:block;color:var(--muted);font-size:14px}
+.libtable .ra{text-align:right;white-space:nowrap}
+.status{display:inline-block;font-size:13px;font-weight:600;padding:2px 8px;border-radius:3px;white-space:nowrap}
+.s-in-progress{background:var(--pen-soft);color:var(--pen)}.s-final{background:var(--warn-bg);color:#6b4700}.s-finalized{background:var(--ok-bg);color:#2d6a33}
+.finalBox{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);border-left:6px solid var(--pen);border-radius:6px;padding:14px 18px;margin-bottom:16px}
+.finalBox h2{margin:0;font-size:22px}.finalBox p{margin:4px 0 0;color:var(--ink2);max-width:70ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .ncaaSvg{display:block;width:100%;height:auto;background:#fff;box-shadow:0 2px 14px #0003;border-radius:2px}
 .ncaaSvg .hw,.ncaaSvg .hwb{font-family:'Kalam','Comic Sans MS','Bradley Hand',cursive;fill:#1c3a8c}.ncaaSvg .hwb{font-weight:700}
@@ -189,6 +223,7 @@ label.check input{margin-top:3px;width:16px;height:16px;accent-color:var(--pen)}
  .point{padding:13px 4px;font-size:17px}.pos{min-height:58px;padding:17px 2px 6px}.pos b{font-size:19px}.pos .for{font-size:12px}.libBtn{font-size:13px;padding:5px 7px}
  .grid2,.pick3{grid-template-columns:1fr}.span2{grid-column:auto}.modal{padding:16px}.slots{grid-template-columns:repeat(4,1fr)}
  .event{grid-template-columns:52px 1fr auto;font-size:14px}.event .tm{display:none}
+ .home-actions{grid-template-columns:1fr}.home-hero h1{font-size:32px}.lib-h .field{width:100%}.libtable thead{display:none}.libtable tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid var(--rule)}.libtable td{border:0;padding:3px 12px}.libtable .ra{grid-column:1/-1;text-align:left}
  .subtable th:nth-child(3),.subtable td:nth-child(3){display:none}.subtable .oc{width:70px}
 }
 @media print{
@@ -203,17 +238,21 @@ label.check input{margin-top:3px;width:16px;height:16px;accent-color:var(--pen)}
 </style></head>
 <body>
 <header class="appbar"><div class="appbar-in">
- <div class="brand">Volleyball Scoresheet</div>
+ <button class="brand" onclick="meta?goHome():render()" title="Home">Volleyball Scoresheet</button>
  <div class="match-title" id="matchSummary"></div>
  <span class="state" id="matchState">Setup</span>
- <div class="btnrow"><button class="btn quiet" onclick="meta&&openPregame(false)">Match info</button><button class="btn quiet" onclick="openBackup()">Backup</button><button class="btn" onclick="newMatch()">New match</button></div>
+ <div class="btnrow" id="appActions"></div>
 </div></header>
 <main class="app">
+ <div id="homeView" class="homeView" hidden></div>
+ <div id="matchView">
+ <section class="finalBox" id="finalBox" hidden></section>
  <div class="setstrip" id="sets"></div>
  <p class="status" id="status" aria-live="polite"></p>
  <div class="teams" id="teams"></div>
  <div class="controls"><div class="toolbar" id="toolbar"></div><div class="toolbar" id="toolbar2"></div></div>
  <section class="logwrap"><div class="log-h"><h3>Match log</h3><span class="help">Newest first. Edit corrects an entry and re-checks the whole match.</span></div><div class="log" id="log"></div></section>
+ </div>
 </main>
 <div id="modalRoot"></div>
 <div class="toast" id="toast" role="status"></div>
@@ -273,7 +312,7 @@ function maxSets(m=meta){return m.setsToWin*2-1}
 class RuleError extends Error{}
 const fail=msg=>{throw new RuleError(msg)};
 
-function newMatchState(){return {challenges:{A:2,B:2},set:1,phase:'lineup',setsWon:{A:0,B:0},setRecords:{},lineups:{},cur:null,pending:null,history:[],matchStart:null,matchEnd:null}}
+function newMatchState(){return {alts:{A:[],B:[]},challenges:{A:2,B:2},set:1,phase:'lineup',setsWon:{A:0,B:0},setRecords:{},lineups:{},cur:null,pending:null,history:[],matchStart:null,matchEnd:null}}
 function newSetState(L){
  const c={scores:{A:0,B:0},serving:L.firstServe,hasServed:{A:false,B:false},rot:{},slotIds:{},slotHistory:{},liberos:{},lib:{},counts:{},captain:{},verified:null,rally:0,start:null};
  c.hasServed[L.firstServe]=true;
@@ -284,7 +323,7 @@ function newSetState(L){
   c.lib[t]={on:null,replaced:null,slot:null,lastExit:-99,serveSlot:null};
   c.counts[t]={to:0,subs:0};c.barred=c.barred||{A:[],B:[]};
   c.seq=c.seq||{};c.seq[t]=L[t].rot.map(n=>[n]);
-  c.captain[t]={game:L[t].captain,floor:L[t].captain};
+  c.captain[t]={game:L[t].captain,floor:L[t].captain,alternates:[...(L[t].alternates||[])]};
  }
  return c;
 }
@@ -294,10 +333,13 @@ function rotate(c,t){c.rot[t].push(c.rot[t].shift());c.slotIds[t].push(c.slotIds
 function expectedServer(c){const t=c.serving,L=c.lib[t],isLib=!!L.on&&c.slotIds[t][0]===L.slot;return {team:t,number:c.rot[t][0],libero:isLib?L.on:null,slot:c.slotIds[t][0],forPlayer:isLib?L.replaced:null}}
 function liberoIndex(c,t){const L=c.lib[t];return L.on?c.slotIds[t].indexOf(L.slot):-1}
 function frontRowLibero(c,t){const i=liberoIndex(c,t);return i>=0&&!BACK_ROW.includes(i)}
+// Floor captain: the game captain when on court; otherwise the current floor captain if still on;
+// otherwise the first alternate captain on court (liberos may be captains); otherwise ask the scorer.
 function fixCaptain(c,t){
- const C=c.captain[t],on=c.rot[t],libs=liberoNums(c,t);
- if(on.includes(C.game))C.floor=C.game;
- else if(!(C.floor&&on.includes(C.floor)&&!libs.includes(C.floor)))C.floor=null;
+ const C=c.captain[t],on=c.rot[t];
+ if(on.includes(C.game)){C.floor=C.game;return}
+ if(C.floor&&on.includes(C.floor))return;
+ C.floor=(C.alternates||[]).find(p=>on.includes(p))||null;
 }
 // Returns an error message, or null when the substitution is legal.
 function subError(c,t,inP,outP,m){
@@ -324,6 +366,16 @@ function excSubError(c,t,inP,outP,m){
  if(c.barred?.[t]?.includes(inP))return `#${inP} left the set by an exceptional substitution and may not return this set.`;
  if(c.rot[t].indexOf(outP)<0)return `#${outP} is not on the court.`;
  return null;
+}
+// The libero is in position I to serve but already served from a different position this set.
+function liberoServeProblem(c,t){
+ if(t!==c.serving)return null;const ex=expectedServer(c),L=c.lib[t];
+ return ex.libero&&L.serveSlot!==null&&L.serveSlot!==ex.slot?`The libero already served for position ${POS[L.serveSlot]} this set and can't serve from position ${POS[ex.slot]}. Bring #${ex.forPlayer} back in to serve.`:null;
+}
+// Checked when the scorer taps to bring the libero in (not during replay, so older saved matches still load).
+function liberoEntryServeError(c,t,replaces){
+ const L=c.lib[t],idx=c.rot[t].indexOf(replaces);if(L.on||idx!==0||t!==c.serving)return null;const slot=c.slotIds[t][idx];
+ return L.serveSlot!==null&&L.serveSlot!==slot?`The libero already served for position ${POS[L.serveSlot]} this set and can't serve from position ${POS[slot]}. #${replaces} has to serve.`:null;
 }
 function liberoError(c,t,kind,replaces){
  const L=c.lib[t],num=c.liberos[t][kind];
@@ -357,9 +409,12 @@ function apply(st,a,i,m){
    if(l1&&l1===l2)fail(`${tn}: L1 and L2 must be different players.`);
    if(!l1&&l2)fail(`${tn}: enter L1 before L2.`);
    if(!d.rot.includes(d.captain))fail(`Choose the ${tn} captain from the starting six.`);
-   L[t]={rot:[...d.rot],liberos:{L1:l1,L2:l2},captain:d.captain};
+   const alts=[...new Set((d.alternates||[]).filter(x=>x&&x!==d.captain))];
+   for(const x of alts)if(!roster.includes(x))fail(`Alternate captain #${x} is not on the ${tn} roster.`);
+   L[t]={rot:[...d.rot],liberos:{L1:l1,L2:l2},captain:d.captain,alternates:alts};
   }
   st.lineups[st.set]=L;st.cur=newSetState(L);st.phase='live';
+  for(const t of TEAMS)st.cur.captain[t].alternates=[...new Set([...st.alts[t],...(L[t].alternates||[])])].filter(x=>x!==L[t].captain);   // remembered floor captains
   if(isDecidingSet(st.set,m))for(const t of TEAMS)st.challenges[t]=Math.min(2,st.challenges[t]+1);
   H({score:[0,0]});return;
  }
@@ -430,8 +485,10 @@ function apply(st,a,i,m){
   c.counts[a.team].to++;H({score:scoreOf(c),count:c.counts[a.team].to});return;
  }
  case 'captain':{
-  tm(a.team);if(!c.rot[a.team].includes(a.player)||liberoNums(c,a.team).includes(a.player))fail(`#${a.player} is not an on-court, non-libero player.`);
-  c.captain[a.team].floor=a.player;H({score:scoreOf(c)});return;
+  tm(a.team);if(!c.rot[a.team].includes(a.player))fail(`#${a.player} is not on the court.`);
+  const C=c.captain[a.team];C.floor=a.player;if(a.player!==C.game&&!C.alternates.includes(a.player))C.alternates.push(a.player);
+  if(!st.alts[a.team].includes(a.player))st.alts[a.team].push(a.player);   // remembered for the rest of the match
+  H({score:scoreOf(c)});return;
  }
  case 'sanction':{
   tm(a.team);if(!['IR','YC','RC'].includes(a.kind))fail('Choose a sanction.');
@@ -458,17 +515,76 @@ function replayLog(m,lg){
 }
 
 // ---------- 3. Storage & migration ----------
-function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify({app:'vb-scoresheet',v:22,meta,log,ui:{swapped:ui.swapped}}))}catch(e){toast('Could not save on this device (storage full or blocked). Use Backup → Export to keep a copy.','error')}}
+const LIB_KEY='vbscoresheet.library',REC_KEY=id=>'vbscoresheet.match.'+id,ACTIVE_KEY='vbscoresheet.active';
+function newId(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function readLibrary(){try{return JSON.parse(localStorage.getItem(LIB_KEY)||'[]')}catch(e){return []}}
+function matchSummary(m,s,status){
+ const sw=s.setsWon,w=sw.A>sw.B?'A':'B',sets=Object.values(s.setRecords).map(r=>`${r.a}–${r.b}`);
+ return {title:`${teamName('A',m)} at ${teamName('B',m)}`,date:m.date,time:m.time,division:m.division,facility:m.facility,tourney:m.tourney,
+  status:status==='finalized'?'finalized':s.phase==='final'?'final':'in-progress',
+  result:s.phase==='final'?`${teamName(w,m)} won ${Math.max(sw.A,sw.B)}–${Math.min(sw.A,sw.B)}`:s.lineups[1]?`Set ${s.set} in progress, sets ${sw.A}–${sw.B}`:'Not started',sets};
+}
+function writeRecord(rec){
+ localStorage.setItem(REC_KEY(rec.id),JSON.stringify(rec));
+ const lib=readLibrary().filter(x=>x.id!==rec.id);
+ lib.push({id:rec.id,updatedAt:rec.updatedAt,finalizedAt:rec.finalizedAt||null,...matchSummary(rec.meta,replayLog(rec.meta,rec.log),rec.status)});
+ localStorage.setItem(LIB_KEY,JSON.stringify(lib));
+}
+// Every change is saved to this match's record in the on-device library.
+function save(){
+ if(!meta)return;
+ if(!ui.matchId)ui.matchId=newId();
+ try{
+  const rec={app:'vb-scoresheet',v:22,id:ui.matchId,meta,log,ui:{swapped:ui.swapped},status:ui.matchStatus||'active',finalizedAt:ui.finalizedAt||null,updatedAt:Date.now()};
+  localStorage.setItem(REC_KEY(rec.id),JSON.stringify(rec));
+  const lib=readLibrary().filter(x=>x.id!==rec.id);
+  lib.push({id:rec.id,updatedAt:rec.updatedAt,finalizedAt:rec.finalizedAt,...matchSummary(meta,st,rec.status)});
+  localStorage.setItem(LIB_KEY,JSON.stringify(lib));
+  localStorage.setItem(ACTIVE_KEY,rec.id);
+ }catch(e){toast('Could not save on this device (storage full or blocked). Use Backup to download a copy of the match.','error')}
+}
+function openMatch(id){
+ let rec=null;try{rec=JSON.parse(localStorage.getItem(REC_KEY(id)))}catch(e){}
+ if(!rec){toast('That match could not be found on this device.','error');return false}
+ try{const m={...defaultMeta(),...rec.meta},s=replayLog(m,rec.log||[]);meta=m;log=rec.log||[];st=s}
+ catch(e){console.error(e);toast('That match could not be opened: '+e.message,'error');return false}
+ ui.matchId=rec.id;ui.matchStatus=rec.status||'active';ui.finalizedAt=rec.finalizedAt||null;ui.swapped=!!rec.ui?.swapped;ui.draft=null;ui.selLibero=null;ui.reviewSet=null;
+ try{localStorage.setItem(ACTIVE_KEY,rec.id)}catch(e){}
+ closeModal(true);render();afterChange();return true;
+}
+function goHome(){
+ if(meta)save();
+ try{localStorage.removeItem(ACTIVE_KEY)}catch(e){}
+ meta=null;log=[];st=null;ui.matchId=null;ui.matchStatus=null;ui.finalizedAt=null;ui.draft=null;ui.reviewSet=null;ui.homeTab=null;
+ closeModal(true);render();window.scrollTo(0,0);
+}
+function deleteMatch(id){
+ const e=readLibrary().find(x=>x.id===id);
+ confirmDialog(`Delete ${e?e.title+' ('+(e.date||'no date')+')':'this match'} from this device? This can't be undone. Download the match file first if you might need it.`,'Delete match',()=>{
+  try{localStorage.removeItem(REC_KEY(id));localStorage.setItem(LIB_KEY,JSON.stringify(readLibrary().filter(x=>x.id!==id)))}catch(_){}
+  if(ui.matchId===id)goHome();else{closeModal(true);render()}toast('Match deleted.')});
+}
+function downloadRecord(id){try{const rec=JSON.parse(localStorage.getItem(REC_KEY(id)));downloadJSON(rec,rec.meta)}catch(e){toast('That match could not be downloaded.','error')}}
+function downloadJSON(rec,m){
+ const blob=new Blob([JSON.stringify(rec,null,1)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+ a.download=`${m.date||'match'}_${teamName('A',m)}_at_${teamName('B',m)}${rec.status==='finalized'?'_final':''}.json`.replace(/[^\w.-]+/g,'_');
+ document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+}
 function loadSaved(){
+ // Earlier single-match save (v22 before the library) → move it into the library
  let raw=null;try{raw=localStorage.getItem(STORE_KEY)}catch(e){}
- if(raw){try{const d=JSON.parse(raw);meta={...defaultMeta(),...d.meta};log=d.log||[];ui.swapped=!!d.ui?.swapped;st=replayLog(meta,log);return}
-  catch(e){console.error(e);try{localStorage.setItem(STORE_KEY+'.broken',raw)}catch(_){}meta=null;log=[];toast('The saved match could not be loaded; a copy was kept on this device.','error')}}
+ if(raw){try{const d=JSON.parse(raw);if(d.meta){const m={...defaultMeta(),...d.meta},l=d.log||[];replayLog(m,l);writeRecord({app:'vb-scoresheet',v:22,id:newId(),meta:m,log:l,ui:d.ui||{},status:'active',updatedAt:Date.now()});const lib=readLibrary();localStorage.setItem(ACTIVE_KEY,lib[lib.length-1].id)}
+  localStorage.setItem(STORE_KEY+'.migrated',raw);localStorage.removeItem(STORE_KEY)}catch(e){console.error(e);try{localStorage.setItem(STORE_KEY+'.broken',raw);localStorage.removeItem(STORE_KEY)}catch(_){}toast('An earlier saved match could not be loaded; a copy was kept on this device.','error')}}
  let old=null;try{old=localStorage.getItem(OLD_KEY)}catch(e){}
  if(old){
-  try{const o=JSON.parse(old);if(o.setupComplete){const conv=migrateV20(o);st=replayLog(conv.meta,conv.log);meta=conv.meta;log=conv.log;save();toast('Your saved match was upgraded to the new version.')}}
-  catch(e){console.error(e);toast('A match saved by an older version could not be upgraded. A backup copy was kept.','error');meta=null;log=[]}
+  try{const o=JSON.parse(old);if(o.setupComplete){const conv=migrateV20(o);replayLog(conv.meta,conv.log);const id=newId();writeRecord({app:'vb-scoresheet',v:22,id,meta:conv.meta,log:conv.log,ui:{},status:'active',updatedAt:Date.now()});localStorage.setItem(ACTIVE_KEY,id);toast('Your saved match was upgraded to the new version.')}}
+  catch(e){console.error(e);toast('A match saved by an older version could not be upgraded. A backup copy was kept.','error')}
   try{localStorage.setItem(OLD_KEY+'.backup',old);localStorage.removeItem(OLD_KEY)}catch(e){}
  }
+ let active=null;try{active=localStorage.getItem(ACTIVE_KEY)}catch(e){}
+ if(active){let rec=null;try{rec=JSON.parse(localStorage.getItem(REC_KEY(active)))}catch(e){}
+  if(rec){try{const m={...defaultMeta(),...rec.meta};st=replayLog(m,rec.log||[]);meta=m;log=rec.log||[];ui.matchId=rec.id;ui.matchStatus=rec.status||'active';ui.finalizedAt=rec.finalizedAt||null;ui.swapped=!!rec.ui?.swapped}catch(e){console.error(e);meta=null;log=[];st=null;toast('The last open match could not be loaded. It is still listed under Previous matches.','error')}}}
 }
 // Converts the v15–v21 snapshot format into the action log.
 function migrateV20(o){
@@ -505,6 +621,7 @@ function migrateV20(o){
 // Every user action goes through act(): it is checked by the rules engine before it is kept.
 function act(a){
  if(!meta)return false;
+ if(ui.matchStatus==='finalized'){toast('This match is finalized. Reopen it to make corrections.','error');return false}
  const entry={...a,t:a.t??Date.now()},next=clone(st);
  try{apply(next,entry,log.length,meta)}
  catch(e){if(e instanceof RuleError){toast(e.message,'error');return false}throw e}
@@ -512,6 +629,7 @@ function act(a){
 }
 // Replace the log (used by undo / corrections). The whole match is re-checked first.
 function replaceLog(newLog,okMsg){
+ if(ui.matchStatus==='finalized'){toast('This match is finalized. Reopen it to make corrections.','error');return false}
  try{const s=replayLog(meta,newLog);log=newLog;st=s;save();render();if(okMsg)toast(okMsg);afterChange();return true}
  catch(e){if(e instanceof RuleError){const h=st.history.find(x=>x.i===e.index);toast(`That change conflicts with a later entry${h?` (set ${h.set}, ${h.score.join('-')})`:''}: ${e.message}`,'error');return false}throw e}
 }
@@ -531,11 +649,17 @@ function matchMeta(){
  return [meta.division,[date,meta.time&&fmtSched(meta.time)].filter(Boolean).join(' at '),[meta.facility,meta.city].filter(Boolean).join(', '),meta.tourney].filter(Boolean);
 }
 function render(){
- const has=!!meta,ms=$('matchState');
- ms.textContent=!has?'Setup':st.phase==='final'?'Final':st.phase==='lineup'?`Set ${st.set} lineups`:st.phase==='setEnd'?`Set ${st.set} ended`:`Set ${st.set} live`;
+ const has=!!meta,ms=$('matchState'),ro=ui.matchStatus==='finalized';
+ $('homeView').hidden=has;$('matchView').hidden=!has;ms.hidden=!has;
+ $('appActions').innerHTML=has?`<button class="btn quiet" onclick="goHome()">Home</button><button class="btn quiet" onclick="openPregame(false)" ${ro?'disabled':''}>Match info</button><button class="btn quiet" onclick="openBackup()">Backup</button><button class="btn" onclick="newMatch()">New match</button>`:'';
+ ms.textContent=!has?'Home':ro?'Finalized':st.phase==='final'?'Final':st.phase==='lineup'?`Set ${st.set} lineups`:st.phase==='setEnd'?`Set ${st.set} ended`:`Set ${st.set} live`;
  ms.className='state'+(has&&st.phase==='live'?' live':'');
- $('matchSummary').innerHTML=has?`<b>${esc(teamName('A'))} at ${esc(teamName('B'))}</b><span class="meta">${matchMeta().map(x=>`<span>${esc(x)}</span>`).join('')}</span>`:'<b>No match yet</b><span class="meta"><span>Start a new match to enter teams, rosters and lineups.</span></span>';
- if(!has){for(const id of ['sets','teams','toolbar','toolbar2','log'])$(id).innerHTML='';$('status').textContent='';return}
+ $('matchSummary').innerHTML=has?`<b>${esc(teamName('A'))} at ${esc(teamName('B'))}</b><span class="meta">${matchMeta().map(x=>`<span>${esc(x)}</span>`).join('')}</span>`:'<b>Home</b><span class="meta"><span>Start a new match or open a previous one.</span></span>';
+ if(!has){renderHome();return}
+ const fb=$('finalBox');fb.hidden=st.phase!=='final';$('status').hidden=st.phase==='final';
+ if(st.phase==='final'){const sw=st.setsWon,w=sw.A>sw.B?'A':'B',sets=Object.values(st.setRecords).map(r=>`${r.a}–${r.b}`).join(', ');
+  fb.innerHTML=ro?`<div><h2>Finalized match</h2><p>${esc(teamName(w))} won ${Math.max(sw.A,sw.B)}–${Math.min(sw.A,sw.B)} (${sets}). Finalized ${ui.finalizedAt?new Date(ui.finalizedAt).toLocaleString([],{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}):''}. This match is read-only.</p></div><div class="btnrow"><button class="btn" onclick="openScoresheet()">View scoresheets</button><button class="btn" onclick="exportMatch()">Download match file</button><button class="btn quiet" onclick="reopenMatch()">Reopen for corrections</button><button class="btn primary" onclick="goHome()">Close</button></div>`
+  :`<div><h2>Match final</h2><p>${esc(teamName(w))} won ${Math.max(sw.A,sw.B)}–${Math.min(sw.A,sw.B)} (${sets}). Review or print the scoresheets, then finalize the match to save it and return to the home screen.</p></div><div class="btnrow"><button class="btn" onclick="openScoresheet()">View scoresheets</button><button class="btn primary" onclick="finalizeMatch()">Finalize match</button></div>`}
  $('sets').innerHTML=Array.from({length:maxSets()},(_,k)=>{const n=k+1,r=st.setRecords[n],cur=!r&&n===st.set&&st.phase!=='final';
   const sc=r?`${r.a}–${r.b}`:cur&&st.cur?`${st.cur.scores.A}–${st.cur.scores.B}`:'–';
   return `<div class="${cur?'cur':r?'':'todo'}"><small>Set ${n}</small><b>${sc}</b></div>`}).join('');
@@ -544,16 +668,16 @@ function render(){
   :st.phase==='live'?(st.cur.verified?'Rally in play. Tap Point for the team that won it.':'Before the serve: make substitutions, timeouts or libero changes, then verify the server.')
   :st.phase==='setEnd'?'Set point reached. Confirm the set score.':`Enter the set ${st.set} lineups to begin.`;
  $('teams').innerHTML=(ui.swapped?['B','A']:['A','B']).map(teamCard).join('');
- const pre=canPreServe(),live=st.phase==='live';
+ const pre=canPreServe()&&!ro,live=st.phase==='live'&&!ro;
  const b=([l,f,on,cls=''])=>`<button class="btn ${cls}" onclick="${f}" ${on?'':'disabled'}>${l}</button>`;
  $('toolbar').innerHTML=[['Substitution','openSub()',pre],['Timeout','openTimeout()',pre],['Sanction','openSanction()',live],...(meta.crs?[['Challenge','openChallenge()',canChallenge()]]:[]),['Replay','replayRally()',live&&!!st.cur.verified],['Note','openNote()',true]].map(b).join('');
- $('toolbar2').innerHTML=[['Switch sides','swapSides()',true,'quiet'],['Undo','undo()',log.length>0],['Scoresheet','openScoresheet()',true,'primary']].map(b).join('');
- $('log').innerHTML=[...st.history].reverse().map(h=>`<div class="event"><span class="sc">${h.score?h.score.join('–'):''}</span><span>${esc(describe(h))}${h.a.edited?'<span class="badge">Edited</span>':''}</span><span class="tm">Set ${h.set}, ${fmtClock(h.a.t)}</span>${EDITABLE.includes(h.a.type)?`<button class="edit" onclick="openEdit(${h.i})">Edit</button>`:'<span></span>'}</div>`).join('')||'<div class="event"><span></span><span class="muted">Nothing recorded yet.</span></div>';
+ $('toolbar2').innerHTML=[['Switch sides','swapSides()',true,'quiet'],['Undo','undo()',log.length>0&&!ro],['Scoresheet','openScoresheet()',true,'primary']].map(b).join('');
+ $('log').innerHTML=[...st.history].reverse().map(h=>`<div class="event"><span class="sc">${h.score?h.score.join('–'):''}</span><span>${esc(describe(h))}${h.a.edited?'<span class="badge">Edited</span>':''}</span><span class="tm">Set ${h.set}, ${fmtClock(h.a.t)}</span>${EDITABLE.includes(h.a.type)&&!ro?`<button class="edit" onclick="openEdit(${h.i})">Edit</button>`:'<span></span>'}</div>`).join('')||'<div class="event"><span></span><span class="muted">Nothing recorded yet.</span></div>';
 }
 function teamCard(t){
  const c=st.cur,live=st.phase==='live',score=c?c.scores[t]:0,to=c?c.counts[t].to:0,subs=c?c.counts[t].subs:0;
  let btn='<button class="point" disabled>Point</button>';
- if(live&&!c.verified&&c.serving===t){const ex=expectedServer(c);btn=`<button class="point verify" onclick="verifyServe()">Serve by ${ex.libero?ex.libero+' ':''}#${esc(ex.number)}</button>`}
+ if(live&&!c.verified&&c.serving===t){const ex=expectedServer(c);btn=liberoServeProblem(c,t)?`<button class="point" disabled>Libero can't serve here</button>`:`<button class="point verify" onclick="verifyServe()">Serve by ${ex.libero?ex.libero+' ':''}#${esc(ex.number)}</button>`}
  else if(live&&c.verified)btn=`<button class="point" onclick="act({type:'rally',winner:'${t}'})">+ Point</button>`;
  const facts=[['Sets won',st.setsWon[t]],['Timeouts',`${to} of ${meta.timeoutsPerSet}`],['Substitutions',subsUnlimited()?`${subs} used`:`${subs} of ${meta.subsAllowed}`],...(meta.crs?[['Challenges left',st.challenges[t]]]:[])];
  let court='',bench='';
@@ -571,6 +695,7 @@ function teamCard(t){
     else bench+=`<button class="libBtn ${ui.selLibero?.team===t&&ui.selLibero.kind===k?'selected':''}" onclick="selectLibero('${t}','${k}')">${k} #${esc(num)}</button>`}
   }
   if(sel)bench+=`<div class="hint">Tap the back-row player ${ui.selLibero.kind} replaces.</div>`;
+  {const sp=live&&!c.verified?liberoServeProblem(c,t):null;if(sp)bench+=`<div class="warning" style="width:100%">${esc(sp)}</div>`}
   if(frontRowLibero(c,t))bench+=`<div class="warning" style="width:100%">The libero has rotated to the front row. Bring #${esc(L.replaced)} back before the serve.</div>`;
  }
  const serving=c&&live&&c.serving===t?`<span class="serving">${c.verified?'Serve verified':'Serving'}</span>`:'';
@@ -593,7 +718,7 @@ function describe(h){
   case 'captain':return `${tn(a.team)}: floor captain #${a.player}`;
   case 'sanction':return `${{IR:'Improper request',YC:'Yellow card',RC:'Red card'}[a.kind]} — ${tn(a.team)}${a.who?' '+(/^\d/.test(a.who)?'#'+a.who:a.who):''}${a.kind==='RC'?` • point ${tn(other(a.team))}`:''}`;
   case 'note':return `Note: ${a.text}`;
-  case 'confirmSet':return `Set ${h.set} confirmed & signed — ${tn(h.winner)} ${Math.max(...h.score)}-${Math.min(...h.score)}`;
+  case 'confirmSet':return `Set ${h.set} confirmed and signed, ${tn(h.winner)} ${Math.max(...h.score)}-${Math.min(...h.score)}`;
  }
  return a.type;
 }
@@ -606,11 +731,12 @@ function verifyServe(){
 function replayRally(){act({type:'replay'})}
 function swapSides(){ui.swapped=!ui.swapped;save();render()}
 function selectLibero(t,k){ui.selLibero=ui.selLibero?.team===t&&ui.selLibero.kind===k?null:{team:t,kind:k};render()}
-function liberoTap(t,i){const k=ui.selLibero.kind;ui.selLibero=null;act({type:'libero',team:t,kind:k,replaces:st.cur.rot[t][i]})}
+function liberoTap(t,i){const k=ui.selLibero.kind,n=st.cur.rot[t][i];ui.selLibero=null;const err=liberoEntryServeError(st.cur,t,n);if(err){toast(err,'error');render();return}act({type:'libero',team:t,kind:k,replaces:n})}
 // Opens whatever the match needs next (set confirmation, lineups, captain choice, side switch).
 function afterChange(){
  if(!meta||modalOpen())return;
  if(st.phase==='setEnd')return openSetConfirm();
+ if(ui.reviewSet&&st.setRecords[ui.reviewSet])return openSetReview(ui.reviewSet);
  if(st.phase==='lineup'){
   const h=st.history[st.history.length-1];
   if(h&&h.a.type==='confirmSet'&&h.set===2&&ui.shownSideAt!==h.i){ui.shownSideAt=h.i;
@@ -620,8 +746,7 @@ function afterChange(){
  if(st.phase==='live'){
   for(const t of TEAMS)if(!st.cur.captain[t].floor)return openCaptainPicker(t);
  }
- if(st.phase==='final'&&ui.shownFinal!==log.length){ui.shownFinal=log.length;const w=st.setsWon.A>st.setsWon.B?'A':'B';
-  return dialog(`<h2>Match complete</h2><div class="bigscore">${st.setsWon.A} - ${st.setsWon.B}</div><p style="text-align:center"><b>${esc(teamName(w))}</b> wins the match.</p>`,[['Close','closeModal()'],['View & print scoresheet','closeModal(true);openScoresheet()','primary']]);}
+
 }
 
 // ---------- 6. UI: dialogs & flows ----------
@@ -639,7 +764,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modalOpen()&&modalD
 // --- Match setup ---
 function newMatch(){
  const start=()=>{closeModal(true);openPregame(true)};
- if(meta&&log.length)confirmDialog('Start a new match? The current match will be removed from this device (export a backup first if you need it).','Start new match',start);else start();
+ if(meta&&log.length)confirmDialog('Start a new match? The current match stays saved under Previous matches on the home screen.','Start new match',start);else start();
 }
 // --- Match setup: four tabs ---
 const PG_TABS=[['match','Match'],['teams','Teams & rosters'],['officials','Officials'],['rules','Rules']];
@@ -670,7 +795,7 @@ function openPregame(isNew){
   ${sel('subs','Substitutions per set',Array.from({length:31},(_,i)=>[i,i]),m.subsAllowed)}<label class="check" style="padding-top:28px"><input type="checkbox" id="pg-unl" ${m.unlimitedSubs?'checked':''}> Unlimited substitutions</label>
   <p class="help span2" id="pg-subnote"></p>
   <label class="check span2"><input type="checkbox" id="pg-crs" ${m.crs?'checked':''}> Challenge review (CRS) in use: two challenges per team, recorded on the libero tracking sheet</label></div></section>
- <div class="actions">${isNew&&!meta?'':'<button class="btn left quiet" onclick="closeModal()">Cancel</button>'}<button class="btn" id="pg-back" onclick="pgStep(-1)">Back</button><button class="btn" id="pg-next" onclick="pgStep(1)">Next</button><button class="btn primary" onclick="savePregame()">${isNew?'Continue to lineups':'Save changes'}</button></div>`,{dismiss:!(isNew&&!meta),wide:false});
+ <div class="actions"><button class="btn left quiet" onclick="closeModal()">Cancel</button><button class="btn" id="pg-back" onclick="pgStep(-1)">Back</button><button class="btn" id="pg-next" onclick="pgStep(1)">Next</button><button class="btn primary" onclick="savePregame()">${isNew?'Continue to lineups':'Save changes'}</button></div>`,{wide:false});
  $('pg-division').onchange=()=>{const k=formKey({division:$('pg-division').value});if(k==='d1')$('pg-subs').value='15';else if(k==='d23')$('pg-subs').value='18';syncSubsUI()};
  $('pg-unl').onchange=syncSubsUI;
  for(const t of TEAMS){drawRoster(t);drawColors(t)}
@@ -703,7 +828,7 @@ function savePregame(){
  for(const [id,l] of [['date','Enter the match date.'],['time','Enter the scheduled start time.'],['facility','Enter the facility.'],['visitor','Enter the visiting team name.'],['home','Enter the home team name.']])if(!m[id])return need(id,l);
  if(m.visitor.toLowerCase()===m.home.toLowerCase())return need('home','The two teams need different names.');
  for(const t of TEAMS)if(m.rosters[t].length<6){pgTab('teams');$('pg-rtxt'+t).focus();return toast(`${t==='A'?m.visitor:m.home}: the roster needs at least six players.`,'error')}
- if(ui.pg.isNew){meta=m;log=[];st=replayLog(meta,log);ui.selLibero=null;ui.swapped=false;save();closeModal();render();return}
+ if(ui.pg.isNew){if(meta)save();meta=m;log=[];st=replayLog(meta,log);ui.matchId=newId();ui.matchStatus='active';ui.finalizedAt=null;ui.selLibero=null;ui.swapped=false;ui.draft=null;ui.reviewSet=null;save();closeModal();render();return}
  try{st=replayLog(m,log);meta=m;save();closeModal();render();toast('Match information saved.')}
  catch(e){if(e instanceof RuleError)toast('Those changes conflict with what is already recorded: '+e.message,'error');else throw e}
 }
@@ -730,7 +855,8 @@ function drawLineup(t){
  <div class="slots">${[0,1,2,3,4,5,6,7].map(i=>`<button class="slot ${d.active===i?'active':''}" onclick="ui.draft.${t}.active=${i};drawLineup('${t}')"><small>${i<6?POS[i]:i===6?'L1':'L2'}</small>${luVal(d,i)?'#'+esc(luVal(d,i)):'—'}</button>`).join('')}</div>
  <div class="muted small">Filling <b>${d.active<6?'position '+POS[d.active]:d.active===6?'libero L1':'libero L2'}</b> ${luVal(d,d.active)?`<button class="linkBtn" onclick="luSet(ui.draft.${t},ui.draft.${t}.active,'');drawLineup('${t}')">clear</button>`:''}</div>
  <div class="jerseys">${(meta.rosters[t]||[]).map(n=>`<button class="jersey ${used.has(n)?'used':''}" onclick="luPick('${t}','${n}')">#${n}</button>`).join('')}</div>
- <b>Captain</b><div class="jerseys">${d.rot.filter(Boolean).map(n=>`<button class="jersey ${d.captain===n?'prior':''}" onclick="ui.draft.${t}.captain='${n}';drawLineup('${t}')">#${n}</button>`).join('')||'<span class="muted small">Enter starters first</span>'}</div>`;
+ <b>Captain</b><div class="jerseys">${d.rot.filter(Boolean).map(n=>`<button class="jersey ${d.captain===n?'prior':''}" onclick="ui.draft.${t}.captain='${n}';drawLineup('${t}')">#${n}</button>`).join('')||'<span class="muted small">Enter starters first</span>'}</div>
+ ${st.alts[t].filter(x=>x!==d.captain).length?`<p class="help">Remembered floor captains: ${st.alts[t].filter(x=>x!==d.captain).map(x=>'#'+esc(x)).join(', ')}. One of them takes over automatically when the captain leaves the floor.</p>`:''}`;
 }
 function luPick(t,n){
  const d=ui.draft[t];for(let i=0;i<8;i++)if(luVal(d,i)===n)luSet(d,i,'');
@@ -747,8 +873,8 @@ function saveLineups(){
 
 // --- Captain ---
 function openCaptainPicker(t){
- const c=st.cur,libs=liberoNums(c,t);
- showModal(`<h2>${esc(teamName(t))}: floor captain</h2><p>The game captain (#${esc(c.captain[t].game)}) is off the court. Choose the on-court captain.</p><div class="jerseys">${c.rot[t].filter(n=>!libs.includes(n)).map(n=>`<button class="jersey" onclick="if(act({type:'captain',team:'${t}',player:'${n}'}))closeModal()">#${n}</button>`).join('')}</div>`,{dismiss:false});
+ const c=st.cur,libs=liberoNums(c,t),C=c.captain[t];
+ showModal(`<h2>${esc(teamName(t))} floor captain</h2><p>Game captain #${esc(C.game)} is off the court. Choose the floor captain. The app remembers this player and makes them floor captain automatically the next time the captain leaves the floor. #${esc(C.game)} goes back to captain whenever they return.</p><div class="jerseys">${c.rot[t].map(n=>`<button class="jersey" onclick="if(act({type:'captain',team:'${t}',player:'${n}'}))closeModal()">#${n}${libs.includes(n)?'<small>libero</small>':''}</button>`).join('')}</div>`,{dismiss:false});
 }
 
 // --- Substitutions ---
@@ -773,11 +899,12 @@ function drawSub(){
   }
   return `<tr><td class="pl">${POS[i]}</td><td class="oc"><b>#${esc(n)}</b>${isLib?' <span class="tag l">L</span>':''}${!isLib&&seq.length>1?`<span class="for">for #${esc(seq[seq.length-2])}</span>`:''}</td><td class="ch">${chain}</td><td>${ins}</td></tr>`;
  }).join('');
- showModal(`<h2>Substitution</h2>
- <div class="tabs">${TEAMS.map(x=>`<button class="tab ${x===t?'on':''}" onclick="ui.subTeam='${x}';ui.subMsg='';drawSub()">${esc(teamName(x))}<span class="muted">${used(x)}</span></button>`).join('')}</div>
+ showModal(`<h2>Substitution</h2><p class="help">Pick the team, then tap the player coming in on the row of the player going out.</p>
+ <div class="teamSwitch" role="tablist" aria-label="Team substituting">${TEAMS.map(x=>`<button class="ts ${x===t?'on':''}" role="tab" aria-selected="${x===t}" style="--team:${meta.colors[x]}" onclick="ui.subTeam='${x}';ui.subMsg='';drawSub()"><span class="tsdot"></span><span class="tsname">${esc(teamName(x))}</span><span class="tsused">${used(x)}</span></button>`).join('')}</div>
+ <p class="subwho" style="--team:${meta.colors[t]}">Substituting for <b>${esc(teamName(t))}</b></p>
  ${ui.subMsg?`<div class="notice">${ui.subMsg} <button class="linkBtn" onclick="undoSub()">Undo</button></div>`:''}
  <label class="check"><input type="checkbox" ${exc?'checked':''} onchange="ui.subExc=this.checked;ui.subMsg='';drawSub()"> Exceptional substitution (injury or illness). It doesn't count toward the limit, and the player removed can't return this set.</label>
- <table class="subtable"><thead><tr><th>Position</th><th>On court</th><th>This set</th><th>Tap the player coming in</th></tr></thead><tbody>${rows}</tbody></table>
+ <table class="subtable" style="--team:${meta.colors[t]}"><thead><tr><th>Position</th><th>On court</th><th>This set</th><th>Tap the player coming in</th></tr></thead><tbody>${rows}</tbody></table>
  <p class="help">Earlier players in each position are struck through. A player marked <i>returns</i> already played that position; anyone who played a different position can only go back to that one.</p>
  <div class="actions"><button class="btn primary" onclick="closeModal()">Done</button></div>`,{wide:true});
 }
@@ -840,7 +967,15 @@ function openSetConfirm(){
  showModal(`<h2>Confirm set ${p.set}</h2><div class="bigscore">${p.a} - ${p.b}</div><p style="text-align:center"><b>${esc(teamName(p.w))}</b> wins set ${p.set}${clinch?' and the match':''}.</p>
  <div class="stats"><div><b>Set started</b><br>${fmtClock(p.start)}</div><div><b>Set ended</b><br>${fmtClock(p.end)}</div></div>
  <div class="warning">Set time ${fmtDur(dur)}${clinch&&st.matchStart?` • Match time ${fmtDur(p.end-st.matchStart)}`:''}. Confirming signs the set for ${esc(meta.scorekeeper||'the scorer')}.</div>
- <div class="actions"><button class="btn left" onclick="closeModal(true);undo()">Undo last point</button>${meta.crs?'<button class="btn" onclick="closeModal(true);openChallenge()">Challenge</button>':''}<button class="btn primary" onclick="if(act({type:'confirmSet'}))closeModal()">Confirm score & sign set</button></div>`,{dismiss:false});
+ <div class="actions"><button class="btn left" onclick="closeModal(true);undo()">Undo last point</button>${meta.crs?'<button class="btn" onclick="closeModal(true);openChallenge()">Challenge</button>':''}<button class="btn primary" onclick="ui.reviewSet=${p.set};if(act({type:'confirmSet'}))closeModal();else ui.reviewSet=null">Confirm score & sign set</button></div>`,{dismiss:false});
+}
+
+// --- Set review: shown after a set is confirmed, before the next set's lineups ---
+function openSetReview(n){
+ const fin=st.phase==='final',r=st.setRecords[n];
+ showModal(`<h2>Set ${n} complete</h2><p class="help">${esc(teamName(r.w))} won ${Math.max(r.a,r.b)}–${Math.min(r.a,r.b)}. Check the set ${n} scoresheet and print it if you need a paper copy${fin?'.':', then continue to the next set.'}</p>
+ <div class="sheetTabs"><button class="btn" onclick="printSheets([${n}])">Print set ${n} scoresheet</button><button class="btn" onclick="printLTS()">Print libero tracking sheet</button><span style="flex:1"></span><button class="btn primary" onclick="ui.reviewSet=null;${fin?`closeModal(true);ui.sheetSet=${n};openScoresheet()`:'closeModal()'}">${fin?'Finish match':`Continue to set ${n+1} lineups`}</button></div>
+ ${sheetSVG(n)}`,{dismiss:false,wide:true});
 }
 
 // --- Corrections ---
@@ -858,25 +993,45 @@ function openEdit(i){
 
 // --- Backup ---
 function openBackup(){
- showModal(`<h2>Backup</h2><p class="muted">The match is saved automatically on this device. Export a copy to move it to another device or keep it safe.</p>
- <div class="actions" style="justify-content:flex-start"><button class="btn primary" onclick="exportMatch()" ${meta?'':'disabled'}>Export match file</button><label class="btn">Import match file<input type="file" accept=".json,application/json" hidden onchange="importMatch(this.files[0])"></label></div>`);
+ showModal(`<h2>Backup</h2><p class="help">Every match is saved automatically on this device and listed under Previous matches on the home screen. Download a match file to keep a copy elsewhere or move it to another device.</p>
+ <div class="actions" style="justify-content:flex-start"><button class="btn primary" onclick="exportMatch()" ${meta?'':'disabled'}>Download this match file</button><label class="btn">Import a match file<input type="file" accept=".json,application/json" hidden onchange="importMatch(this.files[0])"></label></div>`);
 }
-function exportMatch(){
- const blob=new Blob([JSON.stringify({app:'vb-scoresheet',v:22,meta,log},null,1)],{type:'application/json'});
- const a=document.createElement('a');a.href=URL.createObjectURL(blob);
- a.download=`${(meta.date||'match')}_${teamName('A')}_at_${teamName('B')}.json`.replace(/[^\w.-]+/g,'_');
- document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
-}
+function exportMatch(){if(!meta)return;save();downloadRecord(ui.matchId)}
 function importMatch(file){
  if(!file)return;const r=new FileReader();
  r.onload=()=>{try{const d=JSON.parse(r.result);let m,l;
    if(d.app==='vb-scoresheet'){m={...defaultMeta(),...d.meta};l=d.log||[]}else if(d.setupComplete){({meta:m,log:l}=migrateV20(d))}else throw new Error('Not a scoresheet file.');
-   const s=replayLog(m,l);
-   const go=()=>{meta=m;log=l;st=s;ui.draft=null;save();closeModal();render();toast('Match imported.')};
-   if(meta&&log.length)confirmDialog('Replace the match on this device with the imported one?','Replace',go);else go();
+   replayLog(m,l);
+   const exists=d.id&&readLibrary().some(x=>x.id===d.id),id=d.id&&!exists?d.id:newId();
+   if(meta)save();
+   writeRecord({app:'vb-scoresheet',v:22,id,meta:m,log:l,ui:d.ui||{},status:d.status==='finalized'?'finalized':'active',finalizedAt:d.finalizedAt||null,updatedAt:Date.now()});
+   openMatch(id);toast(exists?'Match imported as a separate copy.':'Match imported.');
   }catch(e){toast('Could not import that file: '+e.message,'error')}};
  r.readAsText(file);
 }
+
+// --- Home screen ---
+const STATUS_LABEL={'in-progress':'In progress',final:'Final, not finalized',finalized:'Finalized'};
+function renderHome(){
+ const lib=readLibrary().sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.updatedAt-a.updatedAt));
+ const open=lib.filter(x=>x.status!=='finalized');
+ const q=(ui.libQuery||'').toLowerCase(),rows=lib.filter(x=>!q||[x.title,x.date,x.division,x.facility,x.tourney,x.result].join(' ').toLowerCase().includes(q));
+ const fmtDate=d=>{if(!d)return '';const x=new Date(d+'T12:00:00');return isNaN(x)?d:x.toLocaleDateString([],{month:'short',day:'numeric',year:'numeric'})};
+ const row=x=>`<tr><td class="hd">${esc(fmtDate(x.date))}</td><td><b>${esc(x.title)}</b><span class="sub">${esc([x.division,x.tourney||x.facility].filter(Boolean).join(', '))}</span></td><td>${esc(x.result||'')}${x.sets?.length?`<span class="sub">${esc(x.sets.join(', '))}</span>`:''}</td><td><span class="status s-${x.status}">${STATUS_LABEL[x.status]||x.status}</span></td><td class="ra"><button class="btn primary" onclick="openMatch('${x.id}')">Open</button> <button class="btn quiet" onclick="downloadRecord('${x.id}')">Download</button> <button class="btn quiet danger" onclick="deleteMatch('${x.id}')">Delete</button></td></tr>`;
+ $('homeView').innerHTML=`<section class="home-hero"><h1>Volleyball Scoresheet</h1><p>Score matches live, then print the NCAA or NAIA scoresheet and libero tracking sheet.</p></section>
+ <div class="home-actions"><button class="homeBtn primary" onclick="newMatch()"><b>Start new match</b><span>Set up teams, rosters, officials and rules</span></button>
+ <button class="homeBtn" onclick="ui.homeTab='library';render();setTimeout(()=>$('libSearch')?.focus(),30)"><b>Load previous match</b><span>${lib.length?`${lib.length} match${lib.length>1?'es':''} saved on this device`:'No matches saved yet'}</span></button></div>
+ ${open.length&&ui.homeTab!=='library'?`<section class="home-list"><h2>Not finalized</h2><table class="libtable"><tbody>${open.map(row).join('')}</tbody></table></section>`:''}
+ ${ui.homeTab==='library'?`<section class="home-list"><div class="lib-h"><h2>Previous matches</h2><input class="field" id="libSearch" placeholder="Search by team, date or event" value="${esc(ui.libQuery||'')}" oninput="ui.libQuery=this.value;renderHome();const i=$('libSearch');i.focus();i.setSelectionRange(i.value.length,i.value.length)"><label class="btn">Import a match file<input type="file" accept=".json,application/json" hidden onchange="importMatch(this.files[0])"></label></div>
+  ${rows.length?`<table class="libtable"><thead><tr><th>Date</th><th>Match</th><th>Result</th><th>Status</th><th></th></tr></thead><tbody>${rows.map(row).join('')}</tbody></table>`:`<p class="help">${lib.length?'No matches match that search.':'No matches saved yet. Start a new match, or import a match file.'}</p>`}</section>`:''}`;
+}
+
+// --- Finalizing ---
+function finalizeMatch(){
+ dialog(`<h2>Finalize this match?</h2><p>The match is saved under Previous matches as finalized, a copy of the match file is downloaded, and you return to the home screen. Finalized matches open read-only.</p>`,[['Go back','closeModal(true)'],['Finalize match','doFinalize()','primary']]);
+}
+function doFinalize(){ui.matchStatus='finalized';ui.finalizedAt=Date.now();save();downloadRecord(ui.matchId);goHome();toast('Match finalized and saved.')}
+function reopenMatch(){confirmDialog('Reopen this finalized match for corrections? It will be marked as not finalized until you finalize it again.','Reopen',()=>{ui.matchStatus='active';ui.finalizedAt=null;save();closeModal(true);render();toast('Match reopened for corrections.')})}
 
 // ---------- 7. Scoresheet renderer ----------
 // Two paper forms, both 1760x1360 px (11x8.5 in). NAIA divisions print on the NAIA form,
@@ -1166,8 +1321,7 @@ window.addEventListener('afterprint',()=>{$('printArea').innerHTML=''});
 (function start(){
  try{document.fonts.load('20px Kalam');document.fonts.load('bold 20px Kalam');document.fonts.load('30px "Mrs Saint Delafield"')}catch(e){}
  
- loadSaved();if(st?.phase==='final')ui.shownFinal=log.length;render();
- if(!meta)openPregame(true);else afterChange();
+ loadSaved();render();if(meta)afterChange();
 })();
 
 </script>

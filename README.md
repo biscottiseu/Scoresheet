@@ -3,8 +3,11 @@
 Live volleyball scoring that prints a hand-completed-looking NCAA scoresheet. It's a single file (`index.html`) with both scoresheet forms built in, no build step, and it works offline.
 
 ## Screens
+- **Home:** Start new match, or Load previous match. Matches that aren't finalized are listed for quick access, and Previous matches has a search box, Open, Download and Delete for every match, plus Import a match file.
+- **End of a match:** after the last set's review, the scoresheets open. Closing them shows the Finalize match box. Finalizing asks you to confirm (or go back), then saves the match as finalized, downloads a copy of the match file, and returns to the home screen. Finalized matches open read-only, with Reopen for corrections if something needs fixing.
 - **Main screen:** score, sets won, timeouts, substitutions and challenges for each team. The court shows each position with the net at the top. A substituted player shows who they came in for ("for #14"), and the libero shows "L1 for #18".
 - **Substitution:** one row per service position. Each row shows who is on the court and everyone who has played that position this set (earlier players struck through). It then lists the bench players who can come in for that player. Players who already played the position are marked *returns*. One tap records the sub, and the confirmation has an Undo link.
+- **After each set:** confirming the score opens that set's finished scoresheet, with buttons to print it or the libero tracking sheet, then continues to the next set's lineups.
 - **Match setup:** four tabs: Match, Teams & rosters, Officials, Rules. Rosters can be typed ("1 3 5 7 12") or picked from the full number list. If anything is missing, the form jumps to the tab that needs it.
 
 ## How it works
@@ -21,11 +24,12 @@ A match is stored as a **log of actions**: lineup, serve, rally, sub, libero, ti
   - A player who has played in one position can only return to that position.
   - The libero can't be subbed, and the player the libero replaced can't be subbed in.
 - Libero:
+  - Can't enter position I to serve if she already served from a different position that set; the main screen also warns before the serve.
   - Only replaces back-row players.
   - A completed rally between exit and re-entry (except entering at position I to serve).
   - Serves in only one rotation position per set.
   - Must leave before the serve if they rotate to the front row.
-- Floor captain is requested when the game captain leaves the court.
+- Captains: the game captain is chosen from the starters. When the captain leaves the court, the app asks for a floor captain once and remembers that player for the rest of the match, so the next time it picks them automatically. The set's starting captain becomes captain again whenever they return to the floor. A libero can be floor captain.
 - Timeouts per set, plus media timeouts.
 - Sanctions: improper request, yellow card, red card. A red card gives the point and the serve to the opponent.
 - Sets to 25 (deciding set to 15), win by 2. Prompts the side change after set 2 (2026 NCAA rule 9.2.4; no switch at 8 in set 5).
@@ -63,6 +67,8 @@ The Scoresheet viewer has a **Libero tracking** tab, which prints portrait. It u
 One Letter-landscape page per set for the scoresheet. Use **Print this set** or **Print all sets**, then choose "Save as PDF" for a digital copy.
 
 ## Data
+Every match is saved automatically in this browser's storage on this device and listed under Previous matches. Clearing the browser's site data removes them, so keep the match files downloaded at finalize (or use Download) as the permanent record.
+
 - The match saves automatically on the device.
 - **Backup → Export** writes a match file that **Import** can load on another device.
 - Matches saved by v15–v21 are upgraded automatically, and the old data is kept as a backup.
